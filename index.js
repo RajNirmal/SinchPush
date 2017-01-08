@@ -24,10 +24,10 @@ app.get('/times',function(request, response){
   response.send(result);
 })
 app.post('/hello', function(request, response){
-  var outputJson = request.params('test');
+  var outputJson = request.param('test');
   //var myJson = {'Value':outputJson};
   var StringedJson = "{name : "+ outputJson +"}";
-  response.send(JSON.parse(StringedJson));
+  response.send(JSON.stringify(StringedJson));
 })
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
