@@ -25,7 +25,7 @@ app.get('/times',function(request, response){
 })
 app.get('/hello', function(request, response){
   var outputJson = request.param('test');
-  outputJson = "{'Value':outputJson}";
+  outputJson = "{'Value':"+outputJson"}";
   response.send(JSON.stringify(outputJson));
 })
 app.listen(app.get('port'), function() {
