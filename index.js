@@ -26,7 +26,7 @@ app.get('/times',function(request, response){
 app.post('/hello', function(request, response){
   var outputJson = request.param('test');
   //var myJson = {'Value':outputJson};
-  var StringedJson = "{'name' : "+ outputJson +"}";
+  var StringedJson = "{name : "+ outputJson +"}";
   response.send(JSON.parse(StringedJson));
 })
 app.listen(app.get('port'), function() {
