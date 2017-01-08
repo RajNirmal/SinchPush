@@ -1,0 +1,24 @@
+{
+  "name": "sinchpush",
+  "version": "1.0.0",
+  "description": "This is the final time I am creating a Repo for this",
+  "main": "index.js",
+  "scripts": {
+    "test": "heroku"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RajNirmal/SinchPush.git"
+  },
+  "keywords": [
+    "sinch",
+    "push",
+    "firebase"
+  ],
+  "author": "Nirmalraj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RajNirmal/SinchPush/issues"
+  },
+  "homepage": "https://github.com/RajNirmal/SinchPush#readme"
+}
