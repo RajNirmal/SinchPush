@@ -25,8 +25,8 @@ app.get('/times',function(request, response){
 })
 app.post('/hello', function(request, response){
   var outputJson = request.param('test');
-  var myJson = "{'Value':"+outputJson+"}";
-  response.send(JSON.parse(outputJson));
+  var myJson = {'Value':outputJson};
+  response.send(JSON.stringify(outputJson));
 })
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
