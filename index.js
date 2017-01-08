@@ -23,7 +23,7 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
-app.get('/hello', function(request, response){
+app.post('/hello', function(request, response){
   var outputJson = request.param('test');
   outputJson = "{'Value':"+outputJson+"}";
   response.send(JSON.stringify(outputJson));
