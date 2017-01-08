@@ -23,6 +23,10 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
+app.get('/hello', function(request, response){
+  var outputJson = JSON.stringify("HelloWorld");
+  response.send(outputJson);
+})
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
