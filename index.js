@@ -58,6 +58,7 @@ app.get('/hello', function(request, response){
   //response.JSON(StringedJson)
 //  var myJson = "{'Sent from' : "+ outputJson +"}" ;
   response.send(JSON.stringify(outputJson));
+  console.log(outputJson);
   //console.log(outputJson);
 })
 app.listen(app.get('port'), function() {
