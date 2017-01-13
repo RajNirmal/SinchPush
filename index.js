@@ -29,7 +29,8 @@ app.get('/hello', function(request, response){
   var StringedJson = "{name : "+ outputJson +"}";
   //response.send(JSON.stringify(StringedJson));
   response.JSON(StringedJson)*/
-  response.JSON("Sent from : heroku server");
+  String JSONs = "Sent from  : heroku server";
+  response.send(JSON.stringify(JSONs));
 })
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
