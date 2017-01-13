@@ -29,7 +29,7 @@ app.get('/hello', function(request, response){
   //var StringedJson = "{name : "+ outputJson +"}";
   //response.send(JSON.stringify(StringedJson));
   //response.JSON(StringedJson)
-  var myJson = "{Sent from : "+ outputJson +" } ";
+  var myJson = "Sent from : "+ outputJson ;
   response.send(JSON.stringify(myJson));
   console.log(outputJson);
 })
