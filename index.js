@@ -18,7 +18,7 @@ app.get('/push',function(req,res){
   var body = req.params.body;*/
 //  var confName = req.params.name;
   var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
-      to: 'ilisten',
+      to: '/topics/ilisten',
     //  collapse_key: 'your_collapse_key',
 
       notification: {
