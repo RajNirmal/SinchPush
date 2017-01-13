@@ -3,7 +3,8 @@ var express = require('express');
 var app = express();
 var FCM = require('fcm-node');
 var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
-var fcm = new FCM('serverKey');
+var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
+var fcm = new FCM('legacyKey');
 
 app.set('port', (process.env.PORT || 5000));
 
