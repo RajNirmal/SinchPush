@@ -13,20 +13,20 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/push',function(req,res){
-  var title = req.params.title;
-  var body = req.params.body;
+  /*var title = req.params.title;
+  var body = req.params.body;*/
 //  var confName = req.params.name;
   var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
     //  to: 'registration_token',
     //  collapse_key: 'your_collapse_key',
 
       notification: {
-          title: title,
-          body: body
+          title: 'This is Title',
+          body: 'This is body'
       },
 
       data: {  //you can send only notification or only data(or include both)
-          my_key: title
+          my_key: 'Conf Name here'
       }
   };
   fcm.send(message, function(err, response){
