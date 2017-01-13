@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/RajNirmal/SinchPush/issues"
   },
-  "homepage": "https://github.com/RajNirmal/SinchPush#readme"
+  "homepage": "https://github.com/RajNirmal/SinchPush#readme",
+  "dependencies": {
+    "fcm-node": "^1.0.16"
+  }
 }
