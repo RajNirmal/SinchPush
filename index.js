@@ -24,12 +24,12 @@ app.get('/times',function(request, response){
   response.send(result);
 })
 app.get('/hello', function(request, response){
-  /*var outputJson = request.param('test');
+  var outputJson = request.param('test');
   //var myJson = {'Value':outputJson};
-  var StringedJson = "{name : "+ outputJson +"}";
+  //var StringedJson = "{name : "+ outputJson +"}";
   //response.send(JSON.stringify(StringedJson));
-  response.JSON(StringedJson)*/
-  var myJson = "'Sent from'  : 'heroku server'";
+  //response.JSON(StringedJson)
+  var myJson = "{Sent from : "+ outputJson "}";
   response.send(JSON.stringify(myJson));
 })
 app.listen(app.get('port'), function() {
