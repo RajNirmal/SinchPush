@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var FCM = require('fcm-node');
 var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
-
+var fcm = new FCM('serverKey');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -29,7 +29,7 @@ app.get('/push',function(req,res){
           my_key: title
       }
   };
-  FCM.send(message, function(err, response){
+  fcm.send(message, function(err, response){
     if (err) {
         console.log("Something has gone wrong!");
     } else {
