@@ -29,7 +29,7 @@ app.get('/hello', function(request, response){
   var StringedJson = "{name : "+ outputJson +"}";
   //response.send(JSON.stringify(StringedJson));
   response.JSON(StringedJson)*/
-  String JSONs = "Sent from  : heroku server";
+  String JSONs = "'Sent from'  : 'heroku server'";
   response.send(JSON.stringify(JSONs));
 })
 app.listen(app.get('port'), function() {
