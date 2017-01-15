@@ -52,7 +52,7 @@ app.get('/times',function(request, response){
   response.send(result);
 })
 app.get('/hello', function(request, response){
-  var outputJson = request.params('test');
+  var outputJson = request.param('test');
   //var myJson = {'Value':outputJson};
   //var StringedJson = "{name : "+ outputJson +"}";
   //response.send(JSON.stringify(StringedJson));
