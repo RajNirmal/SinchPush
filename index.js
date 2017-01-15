@@ -51,7 +51,7 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
-app.get('/hello', function(request, response){
+app.get('/hello/:test', function(request, response){
   var outputJson = request.param('test');
   //var myJson = {'Value':outputJson};
   //var StringedJson = "{name : "+ outputJson +"}";
