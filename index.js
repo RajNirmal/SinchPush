@@ -63,8 +63,9 @@ app.post('/hello', function(request, response){
   //response.send(JSON.stringify(StringedJson));
   //response.JSON(StringedJson)
 //  var myJson = "{'Sent from' : "+ outputJson +"}" ;
-  response.send(JSON.stringify(outputJson));
-  console.log(outputJson);
+ var SendToAndroid = { "NameSentFromYouIs" : outputJson}
+  response.send(JSON.stringify(SendToAndroid));
+  console.log(SendToAndroid);
   //console.log(outputJson);
 })
 app.listen(app.get('port'), function() {
