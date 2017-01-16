@@ -5,7 +5,7 @@ var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUS
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
-var sender = new gcm.Sender('151107406815');
+var sender = new gcm.Sender('AIzaSyAXG9Fwt4x4w30tSen9GRFMXFm7FJfPVGY');
 var RegToken;
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
