@@ -4,8 +4,6 @@ var app = express();
 var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var bodyParser = require('body-parser');
-var FCM = require('fcm-push');
-var fcm = new FCM(serverKey);
 var gcm = require('node-gcm');
 var sender = new gcm.Sender('151107406815');
 var RegToken;
