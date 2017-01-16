@@ -34,6 +34,7 @@ app.get('/times',function(request, response){
 //THis is a testing place for node js and android push notification
 app.post('/push',function(request,response){
   var message = new gcm.Message();
+  console.log("Inside Push notification");
   message.addNotification('title',"node.js rocks");
   message.addNotification('body',"This message is being sent from node.js");
   sender.send(message,{topic : "/topics/ilisten"},function(err,response){
