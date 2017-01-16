@@ -8,7 +8,7 @@ var fcm = new FCM('legacyKey');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
-  extended : true;
+  extended : true
 }))
 app.set('port', (process.env.PORT || 5000));
 
