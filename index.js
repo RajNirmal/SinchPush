@@ -38,8 +38,8 @@ app.post('/push',function(request,response){
   message.addNotification('title',"node.js rocks");
   message.addNotification('body',"This message is being sent from node.js");
   sender.send(message,{topic : "/topics/ilisten"},function(err,response){
-    if (err) console.error(err);
-    else console.log(response);
+    if (err) console.error(err + "There was an error");
+    else console.log(response + "This is the response from server");
   })
 })
 app.post('/hello', function(request, response){
