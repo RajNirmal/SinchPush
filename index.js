@@ -33,6 +33,7 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
+//THis is a testing place for node js and android push notification
 app.post('/push',function(request,response){
   var message = new gcm.Message();
   message.addNotification('title',"node.js rocks");
