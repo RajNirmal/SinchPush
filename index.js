@@ -40,9 +40,9 @@ app.post('/push',function(request,response){
   message.addNotification('title',title);
   message.addNotification('body',body);
   sender.send(message,{topic : "/topics/ilisten"},function(err,response){
-    if (err){ 
+    if (err){
       console.error(err + "There was an error");
-      response.send(JSON.stringify('Error Occured try again'));
+      response.send(JSON.stringify('Error Occured Please try again'));
   }
     else{
       console.log(response + "This is the response from server");
