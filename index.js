@@ -36,17 +36,19 @@ app.post('/push',function(request,response){
   var title = request.body.title;
   var body = request.body.body;
   var message = new gcm.Message();
+  var errorMessage = { "Message" : "An Error Occured while sending"};
+  var successMessage = {"Message" : "Message passing success"};
   console.log("Inside Push notification");
   message.addNotification('title',title);
   message.addNotification('body',body);
   sender.send(message,{topic : "/topics/ilisten"},function(err,response){
     if (err){
       console.error(err + "There was an error");
-      response.send(JSON.stringify('Error Occured Please try again'));
+      response.send(JSON.stringify(errorMessage));
   }
     else{
       console.log(response + "This is the response from server");
-      response.send(JSON.stringify('Data Sent to all users'));
+      response.send(JSON.stringify(successMessage));
     }
   })
 })
