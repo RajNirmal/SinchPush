@@ -44,11 +44,11 @@ app.post('/push',function(request,response){
   sender.send(message,{topic : "/topics/ilisten"},function(err,response){
     if (err){
       console.error(err + "There was an error");
-      response.send(JSON.stringify(errorMessage));
+      //response.send(JSON.stringify(errorMessage));
   }
     else{
       console.log(response + "This is the response from server");
-      response.send(JSON.stringify(successMessage));
+      //response.send(JSON.stringify(successMessage));
     }
   })
 })
