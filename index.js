@@ -22,9 +22,10 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
   console.log('Activating Cron');
-  cron.schedule('* 1 * * *',function(){
+  var task = cron.schedule('* 1 * * *',function(){
     console.log("running a job every minute");
-  } );
+  },false);
+  task.start();
 });
 app.get('/cool',function(request , response){
   response.send(cool());
