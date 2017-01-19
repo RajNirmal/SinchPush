@@ -1,10 +1,11 @@
 var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
-var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
+//var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
+var cron = require( 'node-cron');
 var sender = new gcm.Sender(legacyKey);
 var RegToken;
 app.use(bodyParser.json())
@@ -20,6 +21,9 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
+  cron.schedule('*****',function(){
+    console.log("running a job every minute");
+  } );
 });
 app.get('/cool',function(request , response){
   response.send(cool());
@@ -31,6 +35,11 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
+var cronJob = function(){
+  cron.schedule('*****',function(){
+    console.log("running a job every minute");
+  } );
+};
 //THis is a testing place for node js and android push notification
 app.post('/push',function(request,response){
   var title = request.body.title;
