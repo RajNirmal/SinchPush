@@ -8,7 +8,7 @@ var gcm = require('node-gcm');
 var cron = require('node-cron');
 var sender = new gcm.Sender(legacyKey);
 var RegToken;
-var task = cron.schedule('* 1 * * *',function(){
+var task = cron.schedule('1-5 * * * *',function(){
   console.log("running a job every minute");
 },false);
 app.use(bodyParser.json())
