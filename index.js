@@ -8,6 +8,9 @@ var gcm = require('node-gcm');
 var cron = require('node-cron');
 var sender = new gcm.Sender(legacyKey);
 var RegToken;
+var task = cron.schedule('* 1 * * *',function(){
+  console.log("running a job every minute");
+},false);
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended : true
@@ -22,9 +25,6 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
   console.log('Activating Cron');
-  var task = cron.schedule('* 1 * * *',function(){
-    console.log("running a job every minute");
-  },false);
   task.start();
 });
 app.get('/cool',function(request , response){
