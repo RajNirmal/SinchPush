@@ -21,6 +21,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
+  console.log('Activating Cron');
   cron.schedule('* 1 * * *',function(){
     console.log("running a job every minute");
   } );
