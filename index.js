@@ -24,7 +24,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
-  console.log('Activating Cron');
+  
   task.start();
 });
 app.get('/cool',function(request , response){
