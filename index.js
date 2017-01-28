@@ -5,7 +5,7 @@ var app = express();
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
-var cron = require('node-cron');
+//var cron = require('node-cron');
 var sender = new gcm.Sender(legacyKey);
 var RegToken;
 var task = cron.schedule('10 * * * * * ',function(){
@@ -24,8 +24,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.get('/', function(request, response) {
   response.render('pages/index');
-  
-  task.start();
+
+  //task.start();
 });
 app.get('/cool',function(request , response){
   response.send(cool());
@@ -37,11 +37,11 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
-var cronJob = function(){
+/*var cronJob = function(){
   cron.schedule('*****',function(){
     console.log("running a job every minute");
   } );
-};
+};*/
 //THis is a testing place for node js and android push notification
 app.post('/push',function(request,response){
   var title = request.body.title;
