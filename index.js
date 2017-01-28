@@ -5,7 +5,7 @@ var app = express();
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
-//var cron = require('node-cron');
+var cron = require('node-cron');
 var sender = new gcm.Sender(legacyKey);
 var RegToken;
 var task = cron.schedule('10 * * * * * ',function(){
