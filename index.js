@@ -37,11 +37,11 @@ app.get('/times',function(request, response){
     result += i + ' ';
   response.send(result);
 })
-/*var cronJob = function(){
+var cronJob = function(){
   cron.schedule('*****',function(){
     console.log("running a job every minute");
   } );
-};*/
+};
 //THis is a testing place for node js and android push notification
 app.post('/push',function(request,response){
   var title = request.body.title;
