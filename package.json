@@ -27,6 +27,7 @@
     "fcm-push": "^1.1.2",
     "gcm-push": "^1.0.1",
     "node-cron": "^1.1.2",
-    "node-gcm": "^0.14.4"
+    "node-gcm": "^0.14.4",
+    "request": "^2.79.0"
   }
 }

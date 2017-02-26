@@ -1,8 +1,11 @@
 var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
+var request = require('request');
 //var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
+usernameAndPassword = "application\" + ApplicationKey + ":" + ApplicationSecret";
+Authorization = "basic" + " " + Base64 ( usernameAndPassword );
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
 var cron = require('node-cron');
@@ -16,7 +19,11 @@ app.use(bodyParser.urlencoded({
   extended : true
 }))
 app.set('port', (process.env.PORT || 5000));
-
+request('http://www.google.com', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Show the HTML for the Google homepage.
+  }
+})
 app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
@@ -63,6 +70,7 @@ app.post('/push',function(request,response){
     }
   })
 })
+
 app.post('/hello', function(request, response){
   var outputJson = request.body.test;
 
