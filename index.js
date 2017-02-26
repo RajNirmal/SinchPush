@@ -19,10 +19,12 @@ app.use(bodyParser.urlencoded({
   extended : true
 }))
 app.set('port', (process.env.PORT || 5000));
-request('http://www.google.com', function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    console.log(body) // Show the HTML for the Google homepage.
-  }
+app.get('/getRequest',function (request , response) {
+  request('http://www.google.com', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body) // Show the HTML for the Google homepage.
+    }
+  })
 })
 app.use(express.static(__dirname + '/public'));
 
