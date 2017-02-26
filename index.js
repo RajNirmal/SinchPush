@@ -6,7 +6,7 @@ var request = require('request');
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var base64 = require('base-64');
 var usernameAndPassword = "application" + "762e9944-0918-4a8a-9f64-efbbbd93f0c1" + ":" + "WFzBgsADy0uFHmkGDwXqDQ==";
-var Authorization = "basic" + " " + base64 ( usernameAndPassword );
+var Authorization = "basic" + " " + base64.encode( usernameAndPassword );
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
 var cron = require('node-cron');
