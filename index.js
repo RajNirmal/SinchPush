@@ -1,7 +1,7 @@
 var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
-var request = require('request');
+var RequestMethods = require('request');
 //var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
 var base64 = require('base-64');
@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 }))
 app.set('port', (process.env.PORT || 5000));
 app.get('/getRequest',function (request , response) {
-  request('http://www.google.com', function (error, response, body) {
+  RequestMethods('http://www.google.com', function (error, response, body) {
     if (!error && response.statusCode == 200) {
       console.log(body) // Show the HTML for the Google homepage.
     }
