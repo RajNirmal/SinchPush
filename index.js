@@ -22,9 +22,9 @@ app.use(bodyParser.urlencoded({
   extended : true
 }))
 app.set('port', (process.env.PORT || 5000));
-app.get('/getRequest',function (request , response) {
+app.post('/getRequest',function (request , response) {
   var MeetingName = request.body.title;
-  var reqLink = "https://callingapi.sinch.com/v1/conferences/id";
+  var reqLink = "https://callingapi.sinch.com/v1/conferences/id/";
   RequestMethods.get(reqLink+MeetingName).auth(SinchApplicationKey, SinchAppSecret, false).on('response',function(response){
     console.log(body);
   });
