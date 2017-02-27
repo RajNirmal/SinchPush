@@ -26,9 +26,9 @@ app.post('/getRequest',function (request , response) {
   var MeetingName = request.body.title;
   console.log(MeetingName);
   var reqLink = "https://callingapi.sinch.com/v1/conferences/id/";
-  RequestMethods.get(reqLink+MeetingName).auth(SinchApplicationKey, SinchAppSecret, false).on('response',function(response){
-    console.log(body);
-  });
+  // RequestMethods.get(reqLink+MeetingName).auth(SinchApplicationKey, SinchAppSecret, false).on('response',function(response){
+  //   console.log(body);
+  // });
 
   // RequestMethods('http://www.google.com', function (error, response, body) {
   //   if (!error && response.statusCode == 200) {
