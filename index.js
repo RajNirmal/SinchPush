@@ -1,14 +1,8 @@
 var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
-var RequestMethods = require('request');
 //var serverKey = 'AAAAIy60C98:APA91bHusQNNlYQ6vzkm4IOFbVqkoWgvu-QsWVadhxAq9NnbmUSR_JPKua7ew2Vnls_Ayt7VCHIyX7uK6gm3CWVrexqb64ahVBBBz0Qvk0z7zngO1vq-D69A83kgBRUi2WZTODhWMBCIbcdbChUZq3w7x6rn9gcPWg'
 var legacyKey = 'AIzaSyB3FBl0GRhQBo5Jtd04gbXyRRBjRdRmBIw';
-var base64 = require('base-64');
-var SinchApplicationKey = "762e9944-0918-4a8a-9f64-efbbbd93f0c1";
-var SinchAppSecret = "WFzBgsADy0uFHmkGDwXqDQ==";
-var usernameAndPassword = "application" + "762e9944-0918-4a8a-9f64-efbbbd93f0c1" + ":" + "WFzBgsADy0uFHmkGDwXqDQ==";
-var Authorization = "basic" + " " + base64.encode( usernameAndPassword );
 var bodyParser = require('body-parser');
 var gcm = require('node-gcm');
 var cron = require('node-cron');
@@ -22,20 +16,7 @@ app.use(bodyParser.urlencoded({
   extended : true
 }))
 app.set('port', (process.env.PORT || 5000));
-app.post('/getRequest',function (request , response) {
-  var MeetingName = request.body.title;
-  console.log(MeetingName);
-  var reqLink = "https://callingapi.sinch.com/v1/conferences/id/";
-  // RequestMethods.get(reqLink+MeetingName).auth(SinchApplicationKey, SinchAppSecret, false).on('response',function(response){
-  //   console.log(body);
-  // });
 
-  // RequestMethods('http://www.google.com', function (error, response, body) {
-  //   if (!error && response.statusCode == 200) {
-  //     console.log(body) // Show the HTML for the Google homepage.
-  //   }
-  // })
-});
 app.use(express.static(__dirname + '/public'));
 
 // views is directory for all template files
@@ -61,6 +42,7 @@ var cronJob = function(){
     console.log("running a job every minute");
   } );
 };
+
 //THis is a testing place for node js and android push notification
 app.post('/push',function(request,response){
   var title = request.body.title;
@@ -82,7 +64,6 @@ app.post('/push',function(request,response){
     }
   })
 })
-
 app.post('/hello', function(request, response){
   var outputJson = request.body.test;
 
