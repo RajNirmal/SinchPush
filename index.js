@@ -45,7 +45,7 @@ var cronJob = function() {
 };
 
 app.get('/hostinger', function(request, response) {
-    var con = mysql.createConnection({
+    var con = mysequel.createConnection({
         host: "mysql.hostinger.in",
         user: "u619471420_raj",
         password: "fifa2011"
