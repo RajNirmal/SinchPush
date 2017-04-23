@@ -48,8 +48,8 @@ app.get('/hostinger', function(request, response) {
     var con = mysql.createConnection({
         host: "mysql.hostinger.in",
         user: "u619471420_raj",
-        password: "fifa2011",
-        db: "u619471420_raj"
+        password: "fifa2011"
+
     });
     con.connect(function(err) {
         if (err) {
